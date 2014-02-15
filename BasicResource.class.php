@@ -62,12 +62,22 @@ abstract class BasicResource{
 			return '';
 		}
 		
-		protected function getQueryParameters(){
+		protected function getQueryParameters($key = ''){
 			if(empty($key))
 				return $this->queryParams;
 			
 			if(array_key_exists($key, $this->queryParams))
 				return $this->queryParams[$key];
+			
+			return '';
+		}
+		
+		protected function getFormParameters($key = ''){
+			if(empty($key))
+				return $this->formParams;
+			
+			if(array_key_exists($key, $this->formParams))
+				return $this->formParams[$key];
 			
 			return '';
 		}

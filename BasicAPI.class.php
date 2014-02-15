@@ -101,6 +101,10 @@ abstract class BasicAPI{
 					$classname = $this->routes[$this->source];
 					
 					$resource = $this->createResourceAPI($classname, $data);
+					
+					if(empty($resoure))
+						return $this->_response('Not Found', 404);
+					
 					$data = $resource->process($status);
 					return $this->_response($data, $status);
 			}

@@ -32,19 +32,11 @@ class PicasaAPI extends BasicAPI{
 		
 		
 		protected function createResourceAPI($classname, $data){
-			switch($classname):
-				default:
-					$res = null;
-					break;
-				case 'MediaREST':
-					$res = new MediaREST($data);
-					break;
-				case 'UserREST':
-					// $res = new UserREST($data);
-					$res = null;
-					break;
-			endswitch;
+			$res = null;
 			
+			if(class_exists($classname))
+				$res = new $classname($data);
+	
 			return $res;
 		}
  }
