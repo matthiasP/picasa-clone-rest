@@ -1,5 +1,4 @@
 <?php 
-include_once('nkt/nkt_basics.php');
 
 /**
  * Classe de référence pour les ressources
